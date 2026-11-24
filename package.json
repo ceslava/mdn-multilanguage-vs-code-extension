@@ -1,0 +1,112 @@
+{
+  "name": "mdn-multilenguaje",
+  "displayName": "MDN Multilenguaje",
+  "description": "Multilingual MDN documentation for HTML, CSS and selected JavaScript APIs, with automatic language selection and local caching.",
+  "version": "0.1.7",
+  "publisher": "ceslava",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onCommand:mdnMultilenguaje.selectLanguage",
+    "onCommand:mdnMultilenguaje.toggleNativeHover",
+    "onCommand:mdnMultilenguaje.clearCache",
+    "onCommand:mdnMultilenguaje.showLog"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "mdnMultilenguaje.selectLanguage",
+        "title": "MDN Multilenguaje: Elegir idioma"
+      },
+      {
+        "command": "mdnMultilenguaje.showLog",
+        "title": "MDN Multilenguaje: Ver diagnóstico"
+      },
+      {
+        "command": "mdnMultilenguaje.toggleNativeHover",
+        "title": "MDN Multilenguaje: Desactivar/restaurar documentación nativa"
+      },
+      {
+        "command": "mdnMultilenguaje.clearCache",
+        "title": "MDN Multilenguaje: Vaciar caché"
+      }
+    ],
+    "configuration": {
+      "title": "MDN Multilenguaje",
+      "properties": {
+        "mdnMultilenguaje.language": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "es",
+            "en-US",
+            "fr",
+            "pt-BR",
+            "de",
+            "it",
+            "ja",
+            "ko",
+            "zh-CN",
+            "ru"
+          ],
+          "description": "auto: usa el idioma de VS Code; si la traducción no está disponible, utiliza inglés."
+        },
+        "mdnMultilenguaje.maxCharacters": {
+          "type": "integer",
+          "default": 500,
+          "minimum": 120,
+          "maximum": 2000,
+          "description": "Longitud máxima del resumen contextual."
+        },
+        "mdnMultilenguaje.cacheDays": {
+          "type": "integer",
+          "default": 30,
+          "enum": [
+            0,
+            7,
+            30,
+            90
+          ],
+          "description": "Días de validez de la caché local; 0 desactiva la caché de resultados correctos."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "npx @vscode/vsce package"
+  },
+  "keywords": [
+    "mdn",
+    "html",
+    "css",
+    "documentation",
+    "spanish",
+    "multilingual"
+  ],
+  "author": {
+    "name": "Cristian Eslava",
+    "url": "https://ceslava.com"
+  },
+  "homepage": "https://ceslava.com",
+  "icon": "icon.png",
+  "pricing": "Free",
+  "galleryBanner": {
+    "color": "#14213D",
+    "theme": "dark"
+  }
+}
