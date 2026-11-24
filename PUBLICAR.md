@@ -3,6 +3,8 @@
 Abre esta carpeta (la que contiene package.json) en VS Code. Con Node.js instalado, ejecuta:
 
 ```sh
+npm ci
+node --test
 npx --yes @vscode/vsce package
 ```
 

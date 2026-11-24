@@ -1,8 +1,8 @@
 {
-  "name": "mdn-multilenguaje",
-  "displayName": "MDN Multilenguaje",
-  "description": "Multilingual MDN documentation for HTML, CSS and selected JavaScript APIs, with automatic language selection and local caching.",
-  "version": "0.1.7",
+  "name": "mdn-in-your-language",
+  "displayName": "MDN in Your Language",
+  "description": "Read MDN Web Docs on hover in Spanish, English, French, Brazilian Portuguese, German, Italian, Japanese, Korean, Simplified Chinese, or Russian, with English fallback.",
+  "version": "0.1.10",
   "publisher": "ceslava",
   "license": "MIT",
   "engines": {
@@ -20,6 +20,7 @@
     "onLanguage:less",
     "onLanguage:javascript",
     "onLanguage:javascriptreact",
+    "onLanguage:typescript",
     "onLanguage:typescriptreact",
     "onCommand:mdnMultilenguaje.selectLanguage",
     "onCommand:mdnMultilenguaje.toggleNativeHover",
@@ -30,23 +31,23 @@
     "commands": [
       {
         "command": "mdnMultilenguaje.selectLanguage",
-        "title": "MDN Multilenguaje: Elegir idioma"
+        "title": "MDN in Your Language: Elegir idioma"
       },
       {
         "command": "mdnMultilenguaje.showLog",
-        "title": "MDN Multilenguaje: Ver diagnóstico"
+        "title": "MDN in Your Language: Ver diagnóstico"
       },
       {
         "command": "mdnMultilenguaje.toggleNativeHover",
-        "title": "MDN Multilenguaje: Desactivar/restaurar documentación nativa"
+        "title": "MDN in Your Language: Desactivar/restaurar documentación nativa"
       },
       {
         "command": "mdnMultilenguaje.clearCache",
-        "title": "MDN Multilenguaje: Vaciar caché"
+        "title": "MDN in Your Language: Vaciar caché"
       }
     ],
     "configuration": {
-      "title": "MDN Multilenguaje",
+      "title": "MDN in Your Language",
       "properties": {
         "mdnMultilenguaje.language": {
           "type": "string",
@@ -85,6 +86,16 @@
           "description": "Días de validez de la caché local; 0 desactiva la caché de resultados correctos."
         }
       }
+    },
+    "configurationDefaults": {
+      "html.hover.documentation": false,
+      "html.hover.references": false,
+      "css.hover.documentation": false,
+      "css.hover.references": false,
+      "scss.hover.documentation": false,
+      "scss.hover.references": false,
+      "less.hover.documentation": false,
+      "less.hover.references": false
     }
   },
   "scripts": {
@@ -115,5 +126,11 @@
   },
   "bugs": {
     "url": "https://github.com/ceslava/mdn-multilanguage-vs-code-extension/issues"
+  },
+  "dependencies": {
+    "@mdn/browser-compat-data": "7.3.17",
+    "typescript": "5.9.3",
+    "vscode-css-languageservice": "6.3.10",
+    "vscode-html-languageservice": "5.6.2"
   }
 }

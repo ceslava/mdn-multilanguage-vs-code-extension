@@ -13,10 +13,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --check src/extension.js
+      - run: npm ci
+      - run: node --check src/extension.js && node --check src/symbols.js
+      - run: node --test
       - run: npx --yes @vscode/vsce package
       - uses: actions/upload-artifact@v4
         with:
-          name: mdn-multilenguaje-vsix
+          name: mdn-in-your-language-vsix
           path: '*.vsix'
           if-no-files-found: error
