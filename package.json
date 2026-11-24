@@ -110,10 +110,10 @@
     "theme": "dark"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/ceslava/mdn-multilanguage-vs-code-extension.git"
-},
-"bugs": {
-  "url": "https://github.com/ceslava/mdn-multilanguage-vs-code-extension/issues"
-}
+    "type": "git",
+    "url": "https://github.com/ceslava/mdn-multilanguage-vs-code-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ceslava/mdn-multilanguage-vs-code-extension/issues"
+  }
 }
